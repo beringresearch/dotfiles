@@ -76,6 +76,7 @@ set hlsearch
 set cursorline
 
 set mouse=a
+set encoding=utf-8
 
 " ----- Plugin-Specific Settings --------------------------------------
 " ----- altercation/vim-colors-solarized settings -----
@@ -115,6 +116,8 @@ let g:airline_detect_paste=1
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
 
+let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
+
 " YCM syntax completions
 "let g:ycm_path_to_python_interpreter = '/PATH/TO/PYTHON/'
 
@@ -148,6 +151,7 @@ let g:easytags_suppress_ctags_warning = 1
 
 " ----- vim-slime settings ------
 let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_python_ipython = 1
 
 let g:slime_no_mappings = 1
