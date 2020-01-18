@@ -1,68 +1,37 @@
 "library() File: .vimrc
-" Author: Ignat Drozdov 
+" Author: Bering Limited 
 ""
 
 " Gotta be first
 
 call plug#begin('~/.vim/plugged')
-" ----- Making Vim look good ------------------------------------------
-Plug 'altercation/vim-colors-solarized'
-Plug 'tomasr/molokai'
+" ----- Vim themes---------- ------------------------------------------
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ErichDonGubler/vim-sublime-monokai'
-Plug 'crusoexia/vim-monokai'
 Plug 'gertjanreynaert/cobalt2-vim-theme'
+Plug 'yuttie/comfortable-motion.vim'
 
-" ----- Vim as a programmer's text editor -----------------------------
+" ----- Vim as an IDE -------------------------------------------------
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/syntastic'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
-Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'
-Plug 'vim-scripts/a.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'Yggdroot/indentLine'
-Plug 'rizzatti/dash.vim'
+Plug 'Raimondi/delimitMate'
 
-" ----- Vim as Python IDE ---------------------------------------------
-Plug 'davidhalter/jedi-vim'
+" ----- Python Tooling ------------------------------------------------
+"Plug 'davidhalter/jedi-vim'
+Plug 'w0rp/ale'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+Plug 'Valloric/YouCompleteMe'
 
-" ----- Working with Git ----------------------------------------------
+" ----- Git Tooling ---------------------------------------------------
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-" ----- Other text editing features -----------------------------------
-Plug 'Raimondi/delimitMate'
-
-" ----- man pages, tmux -----------------------------------------------
-Plug 'jez/vim-superman'
-Plug 'christoomey/vim-tmux-navigator'
-
-" ----- Syntax plugins ------------------------------------------------
-Plug 'jez/vim-c0'
-Plug 'jez/vim-ispc'
-Plug 'kchmck/vim-coffee-script'
-
 " ---- Extras/Advanced plugins ----------------------------------------
-" Highlight and strip trailing whitespace
-"Plugin 'ntpeters/vim-better-whitespace'
-" Easily surround chunks of text
 Plug 'tpope/vim-surround'
-" Align CSV files at commas, align Markdown tables, and more
-"Plugin 'godlygeek/tabular'
-" Automaticall insert the closing HTML tag
-"Plugin 'HTML-AutoCloseTag'
-" Make tmux look like vim-airline (read README for extra instructions)
-"Plugin 'edkolev/tmuxline.vim'
-" All the other syntax plugins I use
-"Plugin 'ekalinin/Dockerfile.vim'
-"Plugin 'digitaltoad/vim-jade'
-"Plugin 'tpope/vim-liquid'
-"Plugin 'cakebaker/scss-syntax.vim'
 
 call plug#end()
 
@@ -79,35 +48,12 @@ set mouse=a
 set encoding=utf-8
 
 " ----- Plugin-Specific Settings --------------------------------------
-" ----- altercation/vim-colors-solarized settings -----
-" Toggle this to "dark" for light colorscheme
-"let g:solarized_termtrans = 1
 set background=dark
-"colorscheme solarized
-
 syntax on
 colorscheme cobalt2
-"set termguicolors
-
-
-"set t_Co=256   " This is may or may not needed.
-
-"set background=light
-"colorscheme PaperColor
-
-
-let g:vim_json_syntax_conceal = 0
 
 " ----- bling/vim-airline settings -----
-" Always show statusbar
 set laststatus=2
-" let g:airline_theme='papercolor'
-
-" Fancy arrow symbols, requires a patched font
-" To install a patched font, run over to
-"     https://github.com/abertsch/Menlo-for-Powerline
-" download all the .ttf files, double-click on them and click "Install"
-" Finally, uncomment the next line
 let g:airline_powerline_fonts = 1
 
 " Show PASTE if in paste mode
@@ -119,8 +65,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
 
 " YCM syntax completions
-"let g:ycm_path_to_python_interpreter = '/PATH/TO/PYTHON/'
-
+let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
 
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with \t
@@ -137,17 +82,6 @@ augroup mySyntastic
   au!
   au FileType tex let b:syntastic_mode = "passive"
 augroup END
-
-
-" ----- xolox/vim-easytags settings -----
-" Where to look for tags files
-set tags=./tags;,~/.vimtags
-" Sensible defaults
-let g:easytags_events = ['BufReadPost', 'BufWritePost']
-let g:easytags_async = 1
-let g:easytags_dynamic_files = 2
-let g:easytags_resolve_links = 1
-let g:easytags_suppress_ctags_warning = 1
 
 " ----- vim-slime settings ------
 let g:slime_target = "tmux"
