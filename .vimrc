@@ -45,8 +45,7 @@ set hlsearch
 set cursorline
 
 set mouse=a
-set encoding=utf-8
-set t_Co=256
+set encoding=UTF-8
 
 " ----- Plugin-Specific Settings --------------------------------------
 set background=dark
