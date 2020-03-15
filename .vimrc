@@ -92,8 +92,7 @@ nmap <silent> <leader>b :TagbarToggle<CR>
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
 " ------NERD Tree settings --------
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+nmap <C-n> :NERDTreeToggle<CR>
 
 " ----- airblade/vim-gitgutter settings -----
 " Required after having changed the colorscheme
