@@ -13,12 +13,12 @@ Plug 'yuttie/comfortable-motion.vim'
 
 " ----- Vim as an IDE -------------------------------------------------
 Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/syntastic'
 Plug 'kien/ctrlp.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
+Plug 'fatih/vim-go'
 
 " ----- Python Tooling ------------------------------------------------
 "Plug 'davidhalter/jedi-vim'
@@ -67,13 +67,6 @@ let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
 " YCM syntax completions
 let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
 
-" ----- jistr/vim-nerdtree-tabs -----
-" Open/close NERDTree Tabs with \t
-nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
-" To have NERDTree always open on startup
-let g:nerdtree_tabs_open_on_console_startup = 0
-
-
 " ----- scrooloose/syntastic settings -----
 let g:syntastic_error_symbol = 'x'
 let g:syntastic_warning_symbol = "!"
@@ -98,6 +91,9 @@ nmap <silent> <leader>b :TagbarToggle<CR>
 " Uncomment to open tagbar automatically whenever possible
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
+" ------NERD Tree settings --------
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " ----- airblade/vim-gitgutter settings -----
 " Required after having changed the colorscheme
