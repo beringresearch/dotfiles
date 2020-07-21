@@ -50,7 +50,7 @@ set encoding=UTF-8
 " ----- Plugin-Specific Settings --------------------------------------
 set background=dark
 syntax on
-!silent colorscheme cobalt2
+silent! colorscheme cobalt2
 
 " ----- GO Settings -------------------
 let g:go_highlight_types = 1
