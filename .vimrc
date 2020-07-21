@@ -18,7 +18,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " ----- Python Tooling ------------------------------------------------
 "Plug 'davidhalter/jedi-vim'
@@ -50,7 +50,15 @@ set encoding=UTF-8
 " ----- Plugin-Specific Settings --------------------------------------
 set background=dark
 syntax on
-colorscheme cobalt2
+!silent colorscheme cobalt2
+
+" ----- GO Settings -------------------
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_deadline = "5s"
 
 " ----- bling/vim-airline settings -----
 set laststatus=2
@@ -62,10 +70,10 @@ let g:airline_detect_paste=1
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
 
-let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
+let g:deoplete#sources#jedi#python_path = '/usr/bin/python3'
 
 " YCM syntax completions
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
 
 " ----- scrooloose/syntastic settings -----
 let g:syntastic_error_symbol = 'x'
