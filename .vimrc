@@ -18,7 +18,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " ----- Python Tooling ------------------------------------------------
 "Plug 'davidhalter/jedi-vim'
@@ -53,12 +53,12 @@ syntax on
 silent! colorscheme cobalt2
 
 " ----- GO Settings -------------------
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_metalinter_deadline = "5s"
+"let g:go_highlight_types = 1
+"let g:go_highlight_fields = 1
+"let g:go_highlight_functions = 1
+"let g:go_metalinter_autosave = 1
+"let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+"let g:go_metalinter_deadline = "5s"
 
 " ----- bling/vim-airline settings -----
 set laststatus=2
