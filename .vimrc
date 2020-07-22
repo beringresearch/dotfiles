@@ -21,7 +21,6 @@ Plug 'Raimondi/delimitMate'
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " ----- Python Tooling ------------------------------------------------
-"Plug 'davidhalter/jedi-vim'
 Plug 'w0rp/ale'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'Valloric/YouCompleteMe'
