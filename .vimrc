@@ -18,12 +18,11 @@ Plug 'kien/ctrlp.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " ----- Python Tooling ------------------------------------------------
 Plug 'w0rp/ale'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-Plug 'Valloric/YouCompleteMe'
 
 " ----- Git Tooling ---------------------------------------------------
 Plug 'airblade/vim-gitgutter'
@@ -52,12 +51,14 @@ syntax on
 silent! colorscheme cobalt2
 
 " ----- GO Settings -------------------
-"let g:go_highlight_types = 1
-"let g:go_highlight_fields = 1
-"let g:go_highlight_functions = 1
-"let g:go_metalinter_autosave = 1
-"let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-"let g:go_metalinter_deadline = "5s"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_deadline = "5s"
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
 
 " ----- bling/vim-airline settings -----
 set laststatus=2
@@ -100,16 +101,13 @@ nmap <silent> <leader>b :TagbarToggle<CR>
 
 " ------NERD Tree settings --------
 nmap <C-n> :NERDTreeToggle<CR>
+let NERDTreeMapOpenInTab='<ENTER>'
 
 " ----- airblade/vim-gitgutter settings -----
 " Required after having changed the colorscheme
 hi clear SignColumn
 " In vim-airline, only display "hunks" if the diff is non-zero
 let g:airline#extensions#hunks#non_zero_only = 1
-
-" ---- vim-conda
-let g:jedi#force_py_version = 3
-let g:UltisnipsUsePythonVersion = 3
 
 " ----- Raimondi/delimitMate settings -----
 let delimitMate_expand_cr = 1
@@ -133,4 +131,5 @@ let g:indentLine_color_term = 239
 let g:indentLine_char = '┊'
 
 " Easier switching between tabs
-map <t> :tabn<CR>
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
