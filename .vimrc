@@ -8,8 +8,7 @@ call plug#begin('~/.vim/plugged')
 " ----- Vim themes---------- ------------------------------------------
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'gertjanreynaert/cobalt2-vim-theme'
-Plug 'yuttie/comfortable-motion.vim'
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
 " ----- Vim as an IDE -------------------------------------------------
 Plug 'scrooloose/nerdtree'
@@ -46,9 +45,13 @@ set mouse=a
 set encoding=UTF-8
 
 " ----- Plugin-Specific Settings --------------------------------------
-set background=dark
-syntax on
-silent! colorscheme cobalt2
+"set background=dark
+"syntax on
+"silent! colorscheme cobalt2syntax on
+set t_Co=256
+set cursorline
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
 
 " ----- GO Settings -------------------
 let g:go_highlight_types = 1
