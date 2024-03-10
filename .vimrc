@@ -90,6 +90,9 @@ augroup mySyntastic
   au FileType tex let b:syntastic_mode = "passive"
 augroup END
 
+
+map <C-n> :NERDTreeToggle<CR>
+
 " ----- vim-slime settings ------
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
